@@ -116,5 +116,19 @@ public class QuanLiDocGia_DAO {
     }
     return false;
   }
+
+  public String hanDungThe(String maLoaiThe){
+    String sql = "select hanSuDung from LoaiThe where maLoaiThe="+maLoaiThe;
+    try{
+      PreparedStatement ps = connect.getConnection().prepareStatement(sql);
+      ResultSet rs = ps.executeQuery();
+      if(rs.next()){
+        return rs.getString("hanSuDung");
+      }
+    }catch(Exception e){
+      e.printStackTrace();
+    }
+    return "";
+  }
 }
 

@@ -380,8 +380,7 @@ public class TrangChuThuThu extends javax.swing.JFrame {
                                         gioitinhnam16.setSelected(true);
                                 } else
                                         gioitinhnu16.setSelected(true);
-
-                                soLuongField.setText("");
+                                hanDungField.setText(new QuanLiDocGia_DAO().hanDungThe(maDocGiaField.getText()));
                         }
                 });
                 loadTableDocGia(tableDocgia2);

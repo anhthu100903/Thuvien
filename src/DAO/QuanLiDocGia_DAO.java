@@ -86,17 +86,18 @@ public class QuanLiDocGia_DAO {
   }
 
   public boolean update_DG(TaiKhoan tk){
-    String sql = "update TAIKHOAN set matKhau=?, tenNguoiDung=?, ngaySinh=?, gioiTinh=?, email=?, sdt=?, soLuongMuon=? where maTaiKhoan=?";
+    String sql = "update TAIKHOAN set matKhau=?, loaiTaiKhoan=?, tenNguoiDung=?, ngaySinh=?, gioiTinh=?, email=?, sdt=?, soLuongMuon=? where maTaiKhoan=?";
     try{
       PreparedStatement ps = connect.getConnection().prepareStatement(sql);
       ps.setString(1, tk.getMatKhau());
-      ps.setString(2, tk.getTenNguoiDung());
-      ps.setString(3, tk.getNgaySinh());
-      ps.setString(4, tk.getGioiTinh());
-      ps.setString(5, tk.getEmail());
-      ps.setString(6, tk.getSdt());
-      ps.setInt(7, tk.getSoLuongMuon());
-      ps.setString(8, tk.getTenTaiKhoan());
+      ps.setString(2, tk.getLoaiTK());
+      ps.setString(3, tk.getTenNguoiDung());
+      ps.setString(4, tk.getNgaySinh());
+      ps.setString(5, tk.getGioiTinh());
+      ps.setString(6, tk.getEmail());
+      ps.setString(7, tk.getSdt());
+      ps.setInt(8, tk.getSoLuongMuon());
+      ps.setString(9, tk.getTenTaiKhoan());
 
       return ps.executeUpdate()>0;
     }catch (Exception e){
